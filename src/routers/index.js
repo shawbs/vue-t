@@ -1,6 +1,6 @@
 import vue from 'vue'
 import Router from 'vue-router'
-import Store from '@store'
+// import Store from '@store'
 
 
 vue.use(Router);
@@ -11,44 +11,45 @@ const opt = {
 
 
 const routes = [
+    // tab
     {
-        path: '/',
-        name: 'home',
+        path: '/tab',
         meta: {
-            title: '我的2018年终报告',
-            userType: 'sxb'
+            title: ''
         },
-        component: () => import('@page/home.vue')
+        component: () => import('@page/tab/index.vue'),
+        children: [
+            {
+                path: 'home',
+                meta: {
+                    title: 'home',
+                    no_transition: true
+                },
+                component: ()=> import('@page/tab/home.vue')
+            },
+            {
+                path: 'mine',
+                meta: {
+                    title: 'mine',
+                    no_transition: true
+                },
+                component: ()=> import('@page/tab/mine.vue')
+            }
+        ]
     },
     //主模块页面
     ...[
-        {
-            path: '/share',
-            name: 'share',
-            meta: {
-                title: '我的专属海报',
-            },
-            component: () => import('@page/share.vue'),
-        },
-        {
-            path: '/report',
-            name: 'report',
-            meta: {
-                title: '我的2018年终报告',
-                userType: 'sxb'
-            },
-            component: () => import('@page/report.vue'),
-        }
+        
     ],
     //用户模块页面
     ...[
         {
-            path: '/login',
+            path: '/user/login',
             name: 'login',
             meta: {
                 title: '登录',
             },
-            component: () => import('@page/login.vue'),
+            component: () => import('@page/user/login.vue'),
         },
     ],
     //其它页面
@@ -59,7 +60,7 @@ const routes = [
             meta: {
                 title: 'error'
             },
-            component: () => import('@page/other/error.vue'),
+            component: () => import('@page/error/error.vue'),
             props: true
         },
         {
@@ -68,7 +69,7 @@ const routes = [
             meta: {
                 title: '404'
             },
-            component: () => import('@page/other/404.vue')
+            component: () => import('@page/error/404.vue')
         }
     ]
    
@@ -80,13 +81,7 @@ const routerInstance = new Router({
 })
 
 routerInstance.beforeEach((to,from,next)=>{
-    const { userType } = to.meta
-    const user_type = Store.state['user'].userType
-    if(userType && user_type !== userType ){
-        next('/share')
-    }else{
-        next();
-    }
+    next();
 })
 
 routerInstance.afterEach((to,from,next)=>{

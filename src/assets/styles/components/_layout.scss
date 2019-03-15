@@ -20,7 +20,7 @@ body,
     font-size: $pagesFontsize;
 }
 
-.page {
+.page,.tabbar-container {
     position: absolute;
     top: 0;
     right: 0;
@@ -42,16 +42,6 @@ body,
         position: relative;
     }
 
-    > .container {
-        order: 3;
-        flex: 1 1 auto;
-        z-index: $z-index-1;
-        overflow-x: hidden;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        height: 101vh;
-    }
-
     > .header {
         order: 1;
         z-index: $z-index-3;
@@ -61,6 +51,15 @@ body,
         order: 2;
         z-index: $z-index-3;
         min-height: $secondHeaderHeight;
+    }
+    > .container {
+        order: 3;
+        flex: 1 1 auto;
+        z-index: $z-index-1;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        height: 101vh;
     }
     > .second-footer {
         order: 4;
@@ -119,7 +118,8 @@ body,
         align-items: stretch;
         line-height: calc(#{$footerHeight} - 1px);
         border-top: 1px solid $color-border;
-        background-color: $color-main;
+        background-color: $gray3;
+        color: $color-text-minor;
 
         > .btn {
             flex-grow: 1;

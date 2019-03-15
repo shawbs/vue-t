@@ -1,5 +1,4 @@
 
-
 /*灰色系*/
 $gray1: #f8f9fa !default;
 $gray2: #e9ecef !default;
@@ -12,21 +11,22 @@ $gray8: #343a40 !default;
 $gray9: #212529 !default;
 
 /*主色系*/
-$color-main: #0c2442 !default;
-$color-second: #fae8b5 !default;
+$color-main: #3259ce !default;
+$color-second: #f90 !default;
 $color-body: #fff !default;
 
 /*辅助色*/
-$color-primary: #409EFF !default;
-$color-success: #67c23a !default;
+$color-primary: #3259ce !default;//#409eff， ff5000，212529
+$color-success: #67c239 !default;
 $color-warning: #e6a23c !default;
 $color-danger: #f56c6c !default;
 $color-info: #909399 !default;
+$color-gray: #f3f3f3 !default;
 
-//$color-red: #f00 !default;
-//$color-green: #04be02 !default;
-//$color-blue: #49a9ee !default;
-//$color-yellow: #ffcc33 !default;
+$color-red: #ff5000 !default;
+$color-green: #04be02 !default;
+$color-blue: #49a9ee !default;
+$color-yellow: #ffcc33 !default;
 
 $color-price: #ff5000 !default;
 
@@ -35,7 +35,7 @@ $color-border: #d9d9d9 !default;
 
 /*字体颜色*/
 $color-text: #333 !default;
-$color-text-minor: #ddd !default;
+$color-text-minor: #666 !default;
 
 // 颜色总合 组件内部用
 $colorList: (
@@ -66,3 +66,5 @@ $sizeList: (
     more: 1.5,
     super: 1.75,
 );
+
+$border: 1px solid $color-gray;

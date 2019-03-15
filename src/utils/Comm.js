@@ -63,35 +63,6 @@ class Comm {
     }
 
     /**
-     * 统计不同渠道访客的行为
-     * @param {*} source 来源类型
-     * @param {*} action 动作类型
-     */
-    pushTrackEvent(source, action) {
-        if (window._czc && window._hmt) {
-            _czc.push(['_trackEvent', source + '渠道', action, `来自${source}的访客,${action}的次数`]);
-            _hmt.push(['_trackEvent', source + '渠道', action, `来自${source}的访客,${action}的次数`]);
-        } else {
-            console.log('统计代码还未安装')
-        }
-    }
-
-    /**
-     * 统计单页面页面访问次数
-     * @param {*} url 新页面
-     */
-    pushTrackView() {
-        if (window._czc && window._hmt) {
-            let contentUrl = location.pathname + location.hash;
-            let refererUrl = '/';
-            _czc.push(['_trackPageview', contentUrl, refererUrl]);
-            _hmt.push(['_trackPageview', contentUrl, refererUrl]);
-        } else {
-            console.log('统计代码还未安装');
-        }
-    }
-
-    /**
      * 获取url中指定参数的值
      * @param {*} name 
      */

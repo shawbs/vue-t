@@ -1,3 +1,6 @@
+/*
+* 引入资源库
+*/
 import Vue from 'vue';
 import { 
     Loadmore, 

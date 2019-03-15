@@ -30,6 +30,6 @@
     width: 100%;
     display: flex;
     align-items: stretch;
-    background: $gray3;
+    background: $color-primary;
 }
 </style>
