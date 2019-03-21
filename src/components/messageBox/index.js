@@ -54,7 +54,7 @@ function show(options) {
 }
 const MessageBox = {};
 MessageBox.noTag = true;
-MessageBox.names = 'message';
+MessageBox.names = 'messageBox';
 
 MessageBox.alert = (message, title = '温馨提示', options) => {
     if (typeof title === 'object') {

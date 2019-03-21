@@ -14,6 +14,7 @@ const routes = [
     // tab
     {
         path: '/tab',
+        name: 'tab',
         meta: {
             title: ''
         },
@@ -21,6 +22,7 @@ const routes = [
         children: [
             {
                 path: 'home',
+                name: 'tab/home',
                 meta: {
                     title: 'home',
                     no_transition: true
@@ -29,6 +31,7 @@ const routes = [
             },
             {
                 path: 'mine',
+                name: 'tab/mine',
                 meta: {
                     title: 'mine',
                     no_transition: true
