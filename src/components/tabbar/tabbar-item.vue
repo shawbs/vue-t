@@ -1,8 +1,8 @@
 <template>
-    <div class="tab-item" :data-url="url" @click="clickHandle($refs.tabItem)" ref="tabItem">
+    <div :class="['tab-item', `${selected ? 'selected': ''}`]" :data-url="url" @click="clickHandle($refs.tabItem)" ref="tabItem">
         <div class="bage" v-if="bage">{{bage}}</div>
         <div class="tab-icon" v-if="icon">{{item.icon}}</div>
-        <div class="tab-label"><slot /></div>
+        <div class="tab-label" :style='labelStyle'><slot /></div>
     </div>
 </template>
 
@@ -10,7 +10,19 @@
     export default {
         name: 'tabbar-item',
         props:{
+            selected: {
+                type: Boolean,
+                default: false
+            },
             icon: {
+                type: String,
+                default: ''
+            },
+            color: {
+                type: String,
+                default: ''
+            },
+            selectColor: {
                 type: String,
                 default: ''
             },
@@ -22,6 +34,11 @@
                 type: String,
                 default: ''
             }
+        },
+        computed: {
+          labelStyle(){
+            return this.color ? `color: ${this.color};` : ''
+          },
         },
         methods: {
             clickHandle(target){
@@ -52,6 +69,14 @@
         background: $color-price;
         color: white;
         border-radius: 25px;
+    }
+    .tab-label{
+      color: #333;
+    }
+    &.selected{
+      .tab-label{
+        color: #fff;
+      }
     }
 }
 </style>

@@ -31,6 +31,8 @@ body,
     justify-content: space-between;
     align-items: stretch;
     background-color: $color-body;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 
     /*----------------定位----------------*/
     > .header,
@@ -44,31 +46,31 @@ body,
 
     > .header {
         order: 1;
-        z-index: $z-index-3;
+        // z-index: $z-index-1;
         min-height: $headerHeight;
     }
     > .second-header {
         order: 2;
-        z-index: $z-index-3;
+        // z-index: $z-index-1;
         min-height: $secondHeaderHeight;
     }
     > .container {
         order: 3;
         flex: 1 1 auto;
-        z-index: $z-index-1;
-        overflow-x: hidden;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        height: 101vh;
+        // z-index: $z-index-1;
+        // overflow-x: hidden;
+        // overflow-y: auto;
+        // -webkit-overflow-scrolling: touch;
+        // height: 101vh;
     }
     > .second-footer {
         order: 4;
-        z-index: $z-index-2;
+        // z-index: $z-index-1;
         min-height: $secondFooterHeight;
     }
     > .footer {
         order: 5;
-        z-index: $z-index-2;
+        // z-index: $z-index-1;
         min-height: $footerHeight;
     }
     /*----------------风格----------------*/

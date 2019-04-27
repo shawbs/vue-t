@@ -2,7 +2,7 @@
     <!-- App -->
     <div id="app">
       <div class="pages">
-        <transition 
+        <transition
           :name="transitionName"
           >
           <navigation>
@@ -11,7 +11,7 @@
         </transition>
       </div>
     </div>
-</template> 
+</template>
 
 <script>
 import {AppMixin} from '@mixin'
@@ -38,6 +38,7 @@ export default {
   methods: {
     initNavigationEvent() {
       this.$navigation.on("forward", (to, from) => {
+        //如果路由的meta属性no_transition为真，则不使用过滤效果
         if (to.route.meta.no_transition) {
           this.transitionName = "";
         } else {

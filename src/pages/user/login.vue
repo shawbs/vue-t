@@ -2,8 +2,8 @@
     <page :title="pageTitle">
         <m-header>header</m-header>
         <container>
-            <h1 class="text-center">未登录</h1>
-            <p class="text-center">The page is need auth login.</p>
+            <h1 class="text-center">表单组件</h1>
+            <div v-for="(item, index) in 5" :key="index">{{item}}</div>
             <linker url="/tab/mine">to tab/mine</linker>
             <linker url="/error/200">to error</linker>
 

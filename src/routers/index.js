@@ -42,7 +42,7 @@ const routes = [
     },
     //主模块页面
     ...[
-        
+
     ],
     //用户模块页面
     ...[
@@ -69,13 +69,14 @@ const routes = [
         {
             path: '*',
             name: '404',
+            redirect: '/tab/home',
             meta: {
                 title: '404'
             },
             component: () => import('@page/error/404.vue')
         }
     ]
-   
+
 ]
 
 const routerInstance = new Router({
