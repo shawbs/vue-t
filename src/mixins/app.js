@@ -8,9 +8,8 @@ const {
 
 export default {
     computed: {
-        ...mapStateBase(['pageTitle'])
+      ...mapStateBase(['theme'])
     },
     methods: {
-        ...mapMutationsBase(['setPageTitle']),
     },
 }

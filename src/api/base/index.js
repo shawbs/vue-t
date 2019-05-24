@@ -1,7 +1,8 @@
-import Vue from 'vue';
+// import Vue from 'vue';
 import Axios from 'axios';
 import Config from './config';
 import { requestSuccess, requestFail, responseSuccess, responseFail } from './interceptors';
+import Store from '@store'; //注释可以解决  Uncaught TypeError
 
 // 全局 axios 实例
 const axiosInstance = Axios.create(Config);
@@ -17,6 +18,13 @@ const nullFunc = function(){}
 class Http {
     constructor() {
         this.axios = axiosInstance;
+    }
+
+    get defaultParam(){
+      return {
+        s: window['$openid'] || 0,
+        _T: new Date().getTime(),
+      }
     }
 
     /**
@@ -48,9 +56,8 @@ class Http {
             ...cfg,
         };
         params = {
-            ...params,
-            s: window['$openid'] || 0,
-            _T: new Date().getTime(),
+          ...this.defaultParam,
+          ...params,
         };
         return this.axios.get( url, { params, ...cfg});
     }
@@ -76,9 +83,8 @@ class Http {
             ...cfg,
         };
         params = {
-            ...params,
-            s: window['$openid'] || 0,
-            _T: new Date().getTime(),
+          ...this.defaultParam,
+          ...params,
         };
         return this.axios.post( url, params, cfg);
     }

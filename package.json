@@ -1,5 +1,5 @@
 {
-  "name": "asus-r",
+  "name": "vue-pc",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "shawbs <xxw.show@qq.com>",
@@ -11,15 +11,11 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "element-ui": "^2.8.2",
     "fastclick": "^1.0.6",
-    "html2canvas": "^1.0.0-alpha.11",
-    "mint-ui": "^2.2.13",
-    "mockjs": "^1.0.1-beta3",
-    "nprogress": "^0.2.0",
     "store": "^2.0.12",
     "vconsole": "^3.2.0",
     "vue": "^2.5.2",
-    "vue-navigation": "^1.1.4",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
@@ -37,9 +33,13 @@
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
+    "element-theme": "^2.0.1",
+    "element-theme-chalk": "^2.8.2",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-css-wrap": "^0.1.2",
     "html-webpack-plugin": "^2.30.1",
     "node-notifier": "^5.1.2",
     "node-sass": "^4.9.2",
@@ -48,7 +48,6 @@
     "portfinder": "^1.0.13",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
-    "postcss-px-to-viewport": "0.0.3",
     "postcss-url": "^7.2.1",
     "rimraf": "^2.6.0",
     "sass-loader": "^7.1.0",
@@ -62,7 +61,8 @@
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "gulp": "^4.0.2"
   },
   "engines": {
     "node": ">= 6.0.0",

@@ -1,17 +1,14 @@
 import Vue from 'vue'
 import FastClick from 'fastclick'
-import Navigation from 'vue-navigation';
 
-import '@as/app.scss'; //导入全局样式
-import '@script'; //导入全局库
+import '@script';
 import inject from '@/inject';
 import component from '@com';
 import App from './App';
 import router from '@router';
 import store from '@store';
+import '@style/app.scss';
 
-
-Vue.use(Navigation, {router});
 Vue.use(inject);
 Vue.use(component);
 

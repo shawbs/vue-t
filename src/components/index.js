@@ -1,3 +1,10 @@
+/*
+ * @Description: 全局组件入口
+ * @Author: shawbs
+ * @LastEditors: shawbs
+ * @Date: 2019-05-10 18:08:24
+ * @LastEditTime: 2019-05-16 14:56:16
+ */
 
 const requireComponent = require.context(
     './',

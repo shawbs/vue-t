@@ -21,47 +21,12 @@ export default {
         }
     },
     computed: {
-        ...mapStateBase(['pageTitle']),
-        ...mapStateUser(['userData','openid', 'userType']),
-        ...mapGettersUser(['invite_id','user_id','isLogin']),
-    },
-    watch: {
-        shareData: {
-            handler(val) {
-                this.$nextTick(() => {
-                    const data = this.$wx.setShare(val, true);
-                    if (this.shareResolve) {
-                        this.shareResolve(data);
-                        this.shareResolve = null;
-                    }
-                });
-            },
-            deep: true,
-        }
+        ...mapStateUser(['userData']),
+        ...mapGettersUser(['user_id','isLogin']),
     },
     methods: {
-        ...mapMutationsBase(['setPageTitle']),
         ...mapMutationsUser(['setUserData', 'setInviteId']),
-        setShareData(data) {
-            return new Promise(resolve => {
-                this.shareData = {
-                    ...this.shareData,
-                    ...data,
-                };
-                this.shareResolve = resolve;
-            });
-        },
-        getUserData(force){
-            if(force || !this.isLogin){
-                User.getUserInfo().then(res=>{
-                    console.log(res)
-                    this.setUserData(res.data)
-                })
-            }
-        }
     },
     activated() {
-        this.setShareData()
-        // this.getUserData()
     },
 }
